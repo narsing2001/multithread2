@@ -11,7 +11,7 @@ public class DaemonEarlyFinishExample {
             }
             System.out.println("Daemon thread finished before main.");
         });
-        
+
         daemon.setDaemon(true); // set before start
         daemon.start();
 
@@ -26,11 +26,17 @@ public class DaemonEarlyFinishExample {
         System.out.println("Main thread finished.");
     }
 }
-/*output:
---------------------------------------
-Main thread doing work...
-Daemon thread started.
-Daemon thread finished before main.
-Main thread finished.
-
-*/
+/*
+ * output:
+ * --------------------------------------
+ * Main thread doing work...
+ * Daemon thread started.
+ * Daemon thread finished before main.
+ * Main thread finished.
+ * --------------------------------------------------------------------
+ * Note:
+ * -Daemon thread finishes before main thread naturally, but JVM does not kill
+ * it early beacause main (user) thread is still running
+ * -Daemon thread is killed when main finishes
+ * 
+ */
