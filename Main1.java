@@ -191,8 +191,8 @@ public class Main1 {
 
         // Using Thread.join() to avoid waiting indefinitely
         try {
-            t3.join(500); // waits max 500ms for t1 to finish
-            t4.join(500); // waits max 500ms for t2 to finish
+            t3.join(500); // waits max 500ms for t3 to finish
+            t4.join(500); // waits max 500ms for t4 to finish
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
