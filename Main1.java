@@ -3,7 +3,9 @@
 class Resource {
     private final String name;
 
-    Resource(String name) { this.name = name; }
+    Resource(String name) { 
+                this.name = name; 
+            }
 
     void doWork(Resource other) {
         Resource first = this;
