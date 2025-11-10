@@ -1,0 +1,21 @@
+/* 2. AtomicLong
+-----------------------------
+🧠 Explanation:
+Each call to incrementAndGet() gives a unique, thread-safe ID.
+Purpose: Similar to AtomicInteger, but for a long value — useful for large counters or ID generators.
+----------
+✅ Example: ID generator
+*/
+
+import java.util.concurrent.atomic.AtomicLong;
+
+public class AtomicLongExample {
+    private static AtomicLong idGenerator = new AtomicLong(1000);
+
+    public static void main(String[] args) {
+        System.out.println("New ID: " + idGenerator.incrementAndGet()); // 1001
+        System.out.println("New ID: " + idGenerator.incrementAndGet()); // 1002
+        System.out.println("New ID: " + idGenerator.incrementAndGet()); // 1003
+    }
+}
+
